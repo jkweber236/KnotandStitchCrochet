@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss',
+  styleUrl: './homepage.component.css',
 })
 export class AppComponent {
   title = 'knotandstitchcrochet';
