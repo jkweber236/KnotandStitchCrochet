@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-homepage',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css',
 })
-export class AppComponent {
-  title = 'knotandstitchcrochet';
-}
+export class HomepageComponent {}
