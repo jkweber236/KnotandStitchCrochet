@@ -1,0 +1,120 @@
+.logo {
+    border-radius: 50%;
+}
+
+header {
+    background-color: var(--main-color);
+    margin: 0;
+    display: flex;
+    color: white;
+}
+
+header .logo {
+    padding: 1.5rem;
+    width: 6rem;
+    height: auto;
+}
+
+.cart {
+    margin-left: auto;
+    padding: 2.5rem 5rem;
+}
+
+nav {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    padding: 1rem 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: auto 5fr 2fr;
+    grid-template-rows: 1fr;
+    background-color: var(--main-color);
+    width: 100%;
+}
+
+footer ul:first-of-type {
+    align-content: center;
+    border-bottom: 1px solid black;
+    grid-row: 1/2;
+    padding: 0 2rem;
+}
+
+footer .logo {
+    padding: 1.5rem;
+    width: 50%;
+    height: auto;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    grid-row: 1/4;
+}
+
+footer p {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: center;
+}
+
+footer ul {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+footer a {
+    max-height: 75px;
+    display: block;
+    width: auto;
+}
+
+.social-link {
+    grid-column: 3/4;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+ footer img {
+    width: 50px;
+    height: auto;
+    padding: 1rem;
+ }
+
+ .social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1/4;
+ }
+
+ #etsy {
+    grid-column: 1/2;
+ }
+
+ #facebook {
+    grid-column: 2/3;
+ }
+
+ #instagram {
+    grid-column: 2/3;
+ }
