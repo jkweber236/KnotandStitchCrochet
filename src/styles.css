@@ -1,5 +1,15 @@
 :root {
-    --logo-color: #102d4a;
-    --main-color: #77a4b9;
-    --accent-color: #85BAA1;
+  /* Colors */
+  --logo-color: #102d4a;
+  --main-color: #77a4b9;
+  --accent-color: #85baa1;
+
+  /* Screen Widths */
+  --small-screen: 320px;
+  --medium-screen: 600px;
+  --large-screen: 992px;
+}
+
+body {
+  margin: 0px;
 }
