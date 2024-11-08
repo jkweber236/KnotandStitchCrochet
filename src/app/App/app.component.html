@@ -1,6 +1,12 @@
 <header>
-  <img class="logo" src="logo.png" alt="KnotandStitchCrochet Logo" height="75px" width="auto">
-  <nav>
+  <img
+    class="logo"
+    src="logo.png"
+    alt="KnotandStitchCrochet Logo"
+    height="75px"
+    width="auto"
+  />
+  <nav class="header-nav">
     <ul>
       <li><a routerLink="/homepage" routerLinkActive="active">Home</a></li>
       <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
@@ -8,14 +14,29 @@
       <li><a routerLink="/contact" routerLinkActive="active">Contact Us</a></li>
     </ul>
   </nav>
-  <img class="cart" src="shopping-cart" src="shopping-cart.png" height="40px" width="auto">
-
+  <div class="header-icons">
+    <img class="profile" src="user.png" height="40px" width="auto" />
+    <img class="cart" src="shopping-cart.png" height="40px" width="auto" />
+    <img
+      class="hamburger"
+      src="hamburger.png"
+      alt="Menu"
+      height="35px"
+      width="auto"
+    />
+  </div>
 </header>
 
 <router-outlet></router-outlet>
 
 <footer>
-  <img class="logo" src="logo.png" alt="KnotandStitchCrochet Logo" height="75px" width="auto">
+  <img
+    class="logo"
+    src="logo.png"
+    alt="KnotandStitchCrochet Logo"
+    height="75px"
+    width="auto"
+  />
   <ul>
     <li><a routerLink="/homepage" routerLinkActive="active">Home</a></li>
     <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
@@ -25,17 +46,41 @@
   <ul>
     <li><a>Shop Policies</a></li>
     <li><a>FAQs</a></li>
+    <li><a>Attributions</a></li>
   </ul>
   <div class="social-links">
-  <a class="social-link" id="etsy" ref="https://www.etsy.com/shop/KnotandStitchCrochet" target="_blank" aria-label="Check us out on Etsy">
-    <img src="etsy.png" alt="Etsy Logo" height="75px" width="auto">
-  </a>
-  <a class="social-link" id="facebook" href="https://www.facebook.com/" target="_blank" aria-label="Follow us on Facebook">
-    <img src="facebook.png" alt="Facebook Logo" height="75px" width="auto">
-  </a>
-  <a class="social-link" id="instagram" href="https://www.instagram.com/knotandstitchcrochet/" target="_blank" aria-label="Follow us on Instagram">
-    <img src="instagram.png" alt="Instagram Logo" height="75px" width="auto">
-  </a>
+    <a
+      class="social-link"
+      id="etsy"
+      ref="https://www.etsy.com/shop/KnotandStitchCrochet"
+      target="_blank"
+      aria-label="Check us out on Etsy"
+    >
+      <img src="etsy.png" alt="Etsy Logo" height="75px" width="auto" />
+    </a>
+    <a
+      class="social-link"
+      id="facebook"
+      href="https://www.facebook.com/"
+      target="_blank"
+      aria-label="Follow us on Facebook"
+    >
+      <img src="facebook.png" alt="Facebook Logo" height="75px" width="auto" />
+    </a>
+    <a
+      class="social-link"
+      id="instagram"
+      href="https://www.instagram.com/knotandstitchcrochet/"
+      target="_blank"
+      aria-label="Follow us on Instagram"
+    >
+      <img
+        src="instagram.png"
+        alt="Instagram Logo"
+        height="75px"
+        width="auto"
+      />
+    </a>
   </div>
   <p>&copy; 2024 KnotandStitchCrochet</p>
 </footer>
