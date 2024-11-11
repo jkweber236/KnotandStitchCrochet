@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital@0;1&display=swap'); 
+
 :root {
+  /* Fonts */
+  --header-font: 'Sour Gummy';
+  --header-font-size: clamp(1.3rem, 3vw, 1.75rem);
+  
   /* Colors */
   --logo-color: #102d4a;
   --main-color: #77a4b9;
