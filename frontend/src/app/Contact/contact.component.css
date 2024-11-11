@@ -55,6 +55,7 @@ input {
 }
 
 .contact-body {
+  font-family: var(--body-font);
   background-color: var(--accent-color);
   margin: 4rem auto;
   padding: 1rem;
