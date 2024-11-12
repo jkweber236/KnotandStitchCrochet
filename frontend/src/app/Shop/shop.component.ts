@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product/product.service';
+import { Product } from '../models/product.model';
+import { NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, NgFor],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })
-export class ShopComponent {}
+export class ShopComponent implements OnInit {
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe(
+      (data: Product[]) => {
+        this.products = data;
+      },
+      (error) => {
+        console.error('Error fetching products:', error);
+      },
+    );
+  }
+}

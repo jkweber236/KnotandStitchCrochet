@@ -1,6 +1,10 @@
-<header></header>
-
-<h1>This is the Shop Page!</h1>
-<body></body>
-
-<footer></footer>
+<div class="shop-body">
+  <h1>This is the Shop Page!</h1>
+  <div class="product-list">
+    <div *ngFor="let product of products" class="product-card">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <img [src]="product.image" alt="{{ product.name }}" width="100px" />
+    </div>
+  </div>
+</div>

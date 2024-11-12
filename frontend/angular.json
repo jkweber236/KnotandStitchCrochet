@@ -11,7 +11,7 @@
         }
       },
       "root": "",
-      "sourceRoot": "frontend/src",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
