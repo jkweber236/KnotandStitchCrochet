@@ -49,6 +49,9 @@ a {
   color: #000;
   font-family: var(--header-font);
 }
+p {
+  font-family: var(--body-font);
+}
 footer {
   background-color: var(--main-color);
   width: 100%;
