@@ -1,85 +1,85 @@
 [
-    {
+  {
     "name": "Crochet Snowball Pattern",
-    "price": 1.50,
+    "price": 1.5,
     "description": "*** DIGITAL PATTERN DOWNLOAD ***\nBring the magic of winter indoors with these crocheted snowballs!\nThis is not a physical item. After purchasing, you will receive a PDF for this beginner-friendly crochet snowball pattern.",
-    "image": "https://github.com/jkweber236/KnotandStitchCrochet/blob/4551e4bbdd674cd7a45ccf63dc03c9c52ad850d8/product-images/snowball.jpg",
+    "image": "snowball.jpg",
     "type": "Digital",
     "packs": []
-    },
-    {
+  },
+  {
     "name": "Crochet Headband Pattern",
-    "price": 1.60,
+    "price": 1.6,
     "description": "*** DIGITAL PATTERN DOWNLOAD ***\nThis is not a physical item. It is a crochet pattern for a baby headband. It includes 4 size alterations (0-3 months, 3-6 months, 6-12 months, and 12-24 months).",
-    "image": "https://github.com/jkweber236/KnotandStitchCrochet/blob/4551e4bbdd674cd7a45ccf63dc03c9c52ad850d8/product-images/headband.JPG",
+    "image": "headband.JPG",
     "type": "Digital",
     "packs": []
-    },
-    {
+  },
+  {
     "name": "Sour Gummy Worm Plushies",
     "description": "Packages include either one worm (your choice of color), a bundle of 3, a bundle of 6, or a bundle of 8 (combinations displayed in photos). A bag will be included for bundles of 3+ worms.\nEach worm is about 4 inches long.\nPattern by EJCrochetandPatterns.\n***All items are handmade so they may vary slightly***\nInclude pipe cleaners inside to allow them to change positions/bend!",
-    "image": "https://github.com/jkweber236/KnotandStitchCrochet/blob/4551e4bbdd674cd7a45ccf63dc03c9c52ad850d8/product-images/gummy-worms.jpg",
+    "image": "gummy-worms.jpg",
     "type": "Physical",
     "packs": [
-        {
+      {
         "quantity": 1,
         "price": 7.25,
         "colors": []
-        },
-        {
+      },
+      {
         "quantity": 3,
-        "price": 21.00,
+        "price": 21.0,
         "colors": []
-        },
-        {
+      },
+      {
         "quantity": 6,
-        "price": 42.00,
+        "price": 42.0,
         "colors": []
-        },
-        {
+      },
+      {
         "quantity": 8,
-        "price": 56.00,
+        "price": 56.0,
         "colors": []
-        }
+      }
     ]
-    },
-    {
-        "name": "Crochet Gummy Bear",
-        "description": "This listing is for a single gummy bear.\nApprox. 2 by 1.25 inches.\nAll orders of 3+ gummy bears will receive a bag with the order as shown in the picture.\nPattern by Endmade.Crochet on TikTok.\n***Each item is handmade so they may vary slightly***",
-        "image": "https://github.com/jkweber236/KnotandStitchCrochet/blob/4551e4bbdd674cd7a45ccf63dc03c9c52ad850d8/product-images/gummy-bears.jpg",
-        "type": "Physical",
-        "packs": [],
-        "colors": [
-            {
-                "color": "Lavender",
-                "quantity": 2,
-                "price": 7.00
-            },
-            {
-                "color": "Peach",
-                "quantity": 8,
-                "price": 7.00
-            },
-            {
-                "color": "Bink",
-                "quantity": 6,
-                "price": 7.00
-            },
-            {
-                "color": "Yellow",
-                "quantity": 8,
-                "price": 7.00
-            },
-            {
-                "color": "Green",
-                "quantity": 8,
-                "price": 7.00
-            },
-            {
-                "color": "Blue",
-                "quantity": 7,
-                "price": 7.00
-            }
-        ]
-    }
+  },
+  {
+    "name": "Crochet Gummy Bear",
+    "description": "This listing is for a single gummy bear.\nApprox. 2 by 1.25 inches.\nAll orders of 3+ gummy bears will receive a bag with the order as shown in the picture.\nPattern by Endmade.Crochet on TikTok.\n***Each item is handmade so they may vary slightly***",
+    "image": "gummy-bears.jpg",
+    "type": "Physical",
+    "packs": [],
+    "colors": [
+      {
+        "color": "Lavender",
+        "quantity": 2,
+        "price": 7.0
+      },
+      {
+        "color": "Peach",
+        "quantity": 8,
+        "price": 7.0
+      },
+      {
+        "color": "Pink",
+        "quantity": 6,
+        "price": 7.0
+      },
+      {
+        "color": "Yellow",
+        "quantity": 8,
+        "price": 7.0
+      },
+      {
+        "color": "Green",
+        "quantity": 8,
+        "price": 7.0
+      },
+      {
+        "color": "Blue",
+        "quantity": 7,
+        "price": 7.0
+      }
+    ]
+  }
 ]
