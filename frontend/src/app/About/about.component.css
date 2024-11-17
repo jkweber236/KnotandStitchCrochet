@@ -1,0 +1,56 @@
+h1 {
+    font-family: var(--header-font);
+    text-align: center;
+}
+
+p {
+    font-family: var(--body-font);
+    padding: 0 3rem;
+    text-align: justify;
+}
+
+#family-photo {
+    padding: 1rem 0 3rem;
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+
+@media (min-width: 600px) {
+    .about-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #family-photo {
+        order: 1;
+        float: left;
+    }
+
+    p {
+        order: 2;
+    }
+}
+
+/* @media (min-width: 600px) {
+    .about-body {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #family-photo {
+        display: block;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        float: left;
+        margin: 10px;
+        width: 40%;
+    }
+
+    .about-text {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+} */
+
+@media (min-width: 992px) {}
