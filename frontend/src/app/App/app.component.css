@@ -9,6 +9,11 @@ header {
   color: #fff;
   padding: 1rem;
 }
+
+#contactli {
+  padding-right: 0;
+}
+
 header .logo {
   min-width: 6rem;
   max-width: 10rem;
@@ -43,6 +48,7 @@ nav {
 li {
   list-style-type: none;
   padding: 0.5rem;
+  text-wrap: nowrap;
 }
 a {
   text-decoration: none;
