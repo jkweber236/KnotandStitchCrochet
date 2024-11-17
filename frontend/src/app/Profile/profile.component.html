@@ -1,0 +1,13 @@
+<div class="profile-body">
+  <h1>This is the Profile Page!</h1>
+
+  <!-- If the user is signed in -->
+  <div *ngIf="true; else notLoggedIn">
+    <p>You are logged in</p>
+  </div>
+
+  <!-- If the user is NOT signed in -->
+  <ng-template #notLoggedIn>
+    <p>Please log in to see the products!</p>
+  </ng-template>
+</div>
