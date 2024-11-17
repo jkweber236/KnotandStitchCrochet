@@ -1,3 +1,40 @@
-body {
-    display: grid;
+h1 {
+    font-family: var(--header-font);
+    text-align: center;
+    margin-top: 2rem;
+}
+.product-list {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .product-list h2, .product-list p{
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    text-align: left;
+    font-family: var(--body-font);
+  }
+
+.product-list img {
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    display: flex;
+    margin: auto;
+    padding: 12px;
+}
+
+@media (min-width: 600px) {
+    .product-list img {
+        width: 325px;
+        height: 375px;
+    }
+}
+
+@media (min-width: 992px) {
+
 }

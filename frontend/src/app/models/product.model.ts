@@ -1,6 +1,7 @@
 export interface Product {
   _id: string; // MongoDB's ObjectId
   name: string;
+  price: number;
   description: string;
   image: string; // Image URL
   type: string; // Physical or Digital
