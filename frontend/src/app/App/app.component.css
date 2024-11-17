@@ -60,6 +60,7 @@ footer {
   grid-template-rows: auto auto;
   position: relative;
   font-size: 20px;
+  margin-top: 2rem;
 }
 footer .logo {
   display: none;
@@ -189,7 +190,6 @@ footer ul:last-of-type::before {
     grid-template-columns: 1fr 3fr 1fr;
     background-color: var(--main-color);
     width: 100%;
-    margin-top: 2rem;
   }
   footer ul:first-of-type {
     align-content: center;
