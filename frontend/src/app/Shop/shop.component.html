@@ -2,9 +2,22 @@
   <h1>Shop</h1>
   <div class="product-list">
     <div *ngFor="let product of products" class="product-card">
-      <img [src]="product.image" alt="{{ product.name }}" width="150px" />
-      <h2>{{ product.name }}</h2>
-      <p>${{ product.price.toFixed(2) }}</p>
+      <div
+        *ngIf="
+          product.type === 'Physical' && product.packs.length > 0;
+          else otherItem
+        "
+      >
+        <img [src]="product.image" alt="{{ product.name }}" width="150px" />
+        <h2>{{ product.name }}</h2>
+        <p>${{ product.price.toFixed(2) }}+</p>
+      </div>
+
+      <ng-template #otherItem>
+        <img [src]="product.image" alt="{{ product.name }}" width="150px" />
+        <h2>{{ product.name }}</h2>
+        <p>${{ product.price.toFixed(2) }}</p>
+      </ng-template>
     </div>
   </div>
 </div>
