@@ -1,45 +1,60 @@
 [
   {
     "name": "Crochet Snowball Pattern",
-    "price": 1.5,
     "description": "*** DIGITAL PATTERN DOWNLOAD ***\nBring the magic of winter indoors with these crocheted snowballs!\nThis is not a physical item. After purchasing, you will receive a PDF for this beginner-friendly crochet snowball pattern.",
     "image": "snowball.jpg",
+    "price": 1.5,
     "type": "Digital",
-    "packs": []
+    "downloadableLink": "Change Me"
   },
   {
     "name": "Crochet Headband Pattern",
-    "price": 1.6,
     "description": "*** DIGITAL PATTERN DOWNLOAD ***\nThis is not a physical item. It is a crochet pattern for a baby headband. It includes 4 size alterations (0-3 months, 3-6 months, 6-12 months, and 12-24 months).",
     "image": "headband.JPG",
+    "price": 1.6,
     "type": "Digital",
-    "packs": []
+    "downloadableLink": "Change Me"
   },
   {
     "name": "Sour Gummy Worm Plushies",
     "description": "Packages include either one worm (your choice of color), a bundle of 3, a bundle of 6, or a bundle of 8 (combinations displayed in photos). A bag will be included for bundles of 3+ worms.\nEach worm is about 4 inches long.\nPattern by EJCrochetandPatterns.\n***All items are handmade so they may vary slightly***\nInclude pipe cleaners inside to allow them to change positions/bend!",
     "image": "gummy-worms.jpg",
+    "price": 7.25,
     "type": "Physical",
-    "packs": [
+    "colors": [
       {
-        "quantity": 1,
-        "price": 7.25,
-        "colors": []
+        "color": "Peach",
+        "stock": 10
       },
       {
+        "color": "Hot Pink",
+        "stock": 10
+      },
+      {
+        "color": "Yellow",
+        "stock": 10
+      },
+      {
+        "color": "Blue",
+        "stock": 10
+      },
+      {
+        "color": "Green",
+        "stock": 10
+      }
+    ],
+    "packs": [
+      {
         "quantity": 3,
-        "price": 21.0,
-        "colors": []
+        "price": 21.0
       },
       {
         "quantity": 6,
-        "price": 42.0,
-        "colors": []
+        "price": 42.0
       },
       {
         "quantity": 8,
-        "price": 56.0,
-        "colors": []
+        "price": 56.0
       }
     ]
   },
@@ -47,39 +62,34 @@
     "name": "Crochet Gummy Bear",
     "description": "This listing is for a single gummy bear.\nApprox. 2 by 1.25 inches.\nAll orders of 3+ gummy bears will receive a bag with the order as shown in the picture.\nPattern by Endmade.Crochet on TikTok.\n***Each item is handmade so they may vary slightly***",
     "image": "gummy-bears.jpg",
+    "price": 7,
     "type": "Physical",
-    "packs": [],
     "colors": [
       {
         "color": "Lavender",
-        "quantity": 2,
-        "price": 7.0
+        "stock": 2
       },
       {
         "color": "Peach",
-        "quantity": 8,
-        "price": 7.0
+        "stock": 8
       },
       {
         "color": "Pink",
-        "quantity": 6,
-        "price": 7.0
+        "stock": 6
       },
       {
         "color": "Yellow",
-        "quantity": 8,
-        "price": 7.0
+        "stock": 8
       },
       {
         "color": "Green",
-        "quantity": 8,
-        "price": 7.0
+        "stock": 8
       },
       {
         "color": "Blue",
-        "quantity": 7,
-        "price": 7.0
+        "stock": 7
       }
-    ]
+    ],
+    "packs": []
   }
 ]

@@ -1,16 +1,31 @@
-export interface Product {
+export interface BaseProduct {
   _id: string; // MongoDB's ObjectId
   name: string;
-  price: number;
   description: string;
   image: string; // Image URL
-  type: string; // Physical or Digital
-  packs: any[];
-  colors: ColorVariant[]; // Array of color variant objects
+  price: number; // Base price for each product
+  type: 'Physical' | 'Digital'; // Physical or Digital
+}
+
+export interface DigitalProduct extends BaseProduct {
+  type: 'Digital';
+  downloadableLink: string;
+}
+
+export interface PhysicalProduct extends BaseProduct {
+  type: 'Physical';
+  colors: ColorVariant[];
+  packs: PackOption[];
 }
 
 export interface ColorVariant {
   color: string;
-  quantity: number; // Quantity available
-  price: number; // Price for that color
+  stock: number;
 }
+
+export interface PackOption {
+  quantity: number;
+  price: number;
+}
+
+export type Product = DigitalProduct | PhysicalProduct;
