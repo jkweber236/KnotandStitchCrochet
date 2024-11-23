@@ -5,6 +5,7 @@ import { AboutComponent } from './About/about.component';
 import { ContactComponent } from './Contact/contact.component';
 import { CartComponent } from './Cart/cart.component';
 import { ProfileComponent } from './Profile/profile.component';
+import { ProductComponent } from './Product/product.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'homepage' }, // Default route
@@ -14,4 +15,5 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'product/:id', component: ProductComponent }
 ];
