@@ -1,0 +1,21 @@
+.product-details {
+    width: 75%;
+    margin: auto;
+    font-family: var(--body-font);
+}
+
+.product-details h2 { 
+    font-family: var(--header-font);
+    font-size: 1.75rem;
+}
+.product-details img {
+    display: flex;
+    margin: auto;
+    padding-top: 3rem;
+    width: 100%;
+}
+
+.description {
+    border: 1px solid black;
+    padding: 1rem;
+}

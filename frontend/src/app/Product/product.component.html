@@ -1,1 +1,7 @@
-<h1>This is the product page</h1>
+<div class="product-details" *ngIf="product">
+  <img *ngIf="product.image" [src]="product.image" alt="{{ product.name }}" width="350px"/>
+  <h2>{{ product.name }}</h2>
+  <p>Price: ${{ product.price.toFixed(2) }}</p>
+  <p>Description:</p>
+  <p class="description">{{ product.description }}</p>
+</div>
