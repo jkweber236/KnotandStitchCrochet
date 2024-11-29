@@ -9,15 +9,20 @@ h1 {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .product-list h2, .product-list p{
+}
+
+    .product-list h2, .product-list p{
     display: flex;
     margin-left: 10px;
     flex-direction: column;
     text-align: left;
     font-family: var(--body-font);
-  }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
 
 .product-list img {
     width: 350px;
