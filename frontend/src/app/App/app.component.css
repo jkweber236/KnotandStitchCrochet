@@ -24,11 +24,14 @@ header .logo {
 .hamburger {
   margin-top: 5px;
 }
-.cart,
-.hamburger,
-.profile {
+.header-icon {
   padding: 0 2%;
 }
+
+.header-icon:hover {
+  cursor: pointer;
+}
+
 .header-icons {
   display: flex;
   justify-content: right;
@@ -36,28 +39,75 @@ header .logo {
   padding-left: 20px;
   margin: auto 3%;
 }
+
+.header-icons a {
+  margin-left: 7%;
+}
+
 nav {
   font-size: 20px;
   font-weight: 700;
   display: flex;
   align-items: center;
 }
-.header-nav ul {
-  display: none;
+
+/* Hamburger menu */
+@media (max-width: 599px) {
+  header {
+    position: relative;
+  }
+
+  .header-nav ul {
+    display: none;
+  }
+
+  .header-nav ul.active {
+    transform: translateY(77px);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background-color: var(--logo-color);
+    width: 100%;
+    z-index: 1;
+    padding: 20px 0;
+  }
+
+  .header-nav ul.active li {
+    font-size: 25px;
+  }
+
+  .header-nav ul.active li:hover {
+    font-size: 27px;
+    font-weight: bold;
+  }
+
+  .header-nav ul.active li a {
+    color: white;
+  }
 }
+
 li {
+  display: flex;
   list-style-type: none;
   padding: 0.5rem;
   text-wrap: nowrap;
+  justify-content: center;
 }
+
 a {
   text-decoration: none;
   color: #000;
   font-family: var(--header-font);
 }
+
 p {
   font-family: var(--body-font);
 }
+
 footer {
   background-color: var(--main-color);
   width: 100%;

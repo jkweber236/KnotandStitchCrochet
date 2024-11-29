@@ -11,4 +11,9 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 })
 export class AppComponent {
   title = 'knotandstitchcrochet';
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
