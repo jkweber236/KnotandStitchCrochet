@@ -34,4 +34,19 @@ const getProductById = async (req, res) => {
   }
 };
 
-module.exports = { getAll, getProductById };
+const getRandomListings = async (req, res) => {
+  try {
+    const randomListings = await mongodb
+      .getDb()
+      .db("KnotandStitchCrochet")
+      .collection("products")
+      .aggregate([{ $sample: { size: 3 } }]) // Fetch 3 random documents
+      .toArray();
+
+    res.status(200).json(randomListings);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+module.exports = { getAll, getProductById, getRandomListings };

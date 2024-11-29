@@ -1,5 +1,5 @@
 <div class="product-details" *ngIf="product">
-  <img *ngIf="product.image" [src]="product.image" alt="{{ product.name }}" width="350px"/>
+  <img *ngIf="product.image" [src]="product.image" alt="{{ product.name }}" width="350"/>
   <div class="product-text">
     <h2>{{ product.name }}</h2>
     <p>Price: ${{ product.price.toFixed(2) }}</p>
