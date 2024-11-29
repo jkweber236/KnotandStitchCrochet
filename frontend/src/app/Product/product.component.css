@@ -1,6 +1,6 @@
 .product-details {
     width: 75%;
-    margin: auto;
+    margin: 1.75rem auto 4rem;
     font-family: var(--body-font);
 }
 
@@ -18,4 +18,35 @@
 .description {
     border: 1px solid black;
     padding: 1rem;
+}
+
+p {
+    font-size: 1.15rem;
+}
+
+button {
+    background-color: var(--logo-color);
+    color: white;
+    border: none;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 50px;
+    margin: auto;
+}
+
+@media (min-width: 600px) {
+    .product-details img {
+        max-height: 500px;
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .product-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        width: 80%;
+        gap: 1rem;
+    }
 }
