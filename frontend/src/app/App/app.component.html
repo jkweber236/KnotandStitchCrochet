@@ -7,25 +7,51 @@
     width="auto"
   />
   <nav class="header-nav">
-    <ul>
-      <li><a routerLink="/homepage" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    <ul [class.active]="menuOpen">
+      <li>
+        <a
+          (click)="toggleMenu()"
+          routerLink="/homepage"
+          routerLinkActive="active"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a (click)="toggleMenu()" routerLink="/shop" routerLinkActive="active"
+          >Shop</a
+        >
+      </li>
+      <li>
+        <a (click)="toggleMenu()" routerLink="/about" routerLinkActive="active"
+          >About</a
+        >
+      </li>
       <li id="contactli">
-        <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+        <a
+          (click)="toggleMenu()"
+          routerLink="/contact"
+          routerLinkActive="active"
+          >Contact Us</a
+        >
       </li>
     </ul>
   </nav>
   <div class="header-icons">
-    <img class="profile" src="user.png" height="40px" width="auto" />
-    <img class="cart" src="shopping-cart.png" height="40px" width="auto" />
-    <img
-      class="hamburger"
-      src="hamburger.png"
-      alt="Menu"
-      height="35px"
-      width="auto"
-    />
+    <a routerLink="/profile" routerLinkActive="active" class="header-icon">
+      <img class="profile" src="user.png" height="40px" width="auto" />
+    </a>
+    <a routerLink="/cart" routerLinkActive="active" class="header-icon">
+      <img class="cart" src="shopping-cart.png" height="40px" width="auto" />
+    </a>
+    <a (click)="toggleMenu()" class="header-icon">
+      <img
+        class="hamburger"
+        src="hamburger.png"
+        alt="Menu"
+        height="35px"
+        width="auto"
+      />
+    </a>
   </div>
 </header>
 
