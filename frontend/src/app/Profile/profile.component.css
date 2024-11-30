@@ -1,0 +1,119 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  width: 70%;
+  min-width: 250px;
+  padding: 15px;
+  padding-bottom: 0;
+  max-width: 300px;
+}
+
+.email,
+.password,
+.confirmPassword {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  padding-left: 10px;
+  font-size: 20px;
+  font-family: var(--body-font);
+}
+
+input {
+  height: 25px;
+  padding-left: 10px;
+  font-size: 15px;
+  font-family: var(--body-font);
+}
+
+h1,
+h1 {
+  text-align: center;
+  font-family: var(--header-font);
+  margin-bottom: 0px;
+}
+
+.loginButton {
+  height: 40px;
+  width: 200px;
+  border-radius: 7px;
+  border: 1px solid black;
+  font-size: 20px;
+  font-family: var(--body-font);
+  margin: 25px auto;
+  background-color: var(--logo-color);
+  color: white;
+}
+
+p {
+  margin: 0;
+}
+
+.createAccount {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.createAccountLink {
+  margin: auto;
+}
+
+.createAccountLink:hover {
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.createAccount a:visited {
+  color: black;
+}
+
+.createAccount a {
+  text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .profile-body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  h1 {
+    grid-column: 1/4;
+  }
+
+  .login {
+    grid-column: 2/3;
+  }
+
+  .createAccount {
+    grid-column: 2/3;
+  }
+
+  .login {
+    max-width: none;
+  }
+
+  label {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  input {
+    height: 30px;
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 25px;
+  }
+}
