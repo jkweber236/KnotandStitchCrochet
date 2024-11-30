@@ -1,13 +1,48 @@
 <div class="profile-body">
-  <h1>This is the Profile Page!</h1>
-
   <!-- If the user is signed in -->
-  <div *ngIf="true; else notLoggedIn">
+  <div *ngIf="false; else notLoggedIn">
     <p>You are logged in</p>
   </div>
 
   <!-- If the user is NOT signed in -->
   <ng-template #notLoggedIn>
-    <p>Please log in to see the products!</p>
+    <h1>Login</h1>
+    <form class="login">
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" name="email" />
+      </div>
+      <div class="password">
+        <label for="password">Password</label>
+        <input type="password" name="password" />
+      </div>
+      <button type="submit" class="loginButton">Login</button>
+    </form>
+
+    <div class="createAccount">
+      <p>Don't have an account?</p>
+      <a
+        class="createAccountLink"
+        routerLink="/create-account"
+        routerLinkActive="active"
+        >Create account</a
+      >
+    </div>
+
+    <!-- <h2>Sign Up</h2>
+    <form class="signup">
+      <div class="username">
+        <label for="username">Username</label>
+        <input type="text" name="username" />
+      </div>
+      <div class="password">
+        <label for="password">Password</label>
+        <input type="text" name="password" />
+      </div>
+      <div class="confirmPassword">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="text" name="confirmPassword" />
+      </div>
+    </form> -->
   </ng-template>
 </div>
