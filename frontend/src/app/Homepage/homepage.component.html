@@ -1,1 +1,10 @@
 <h1>This is the Home Page!</h1>
+<h2>Featured Listings</h2>
+<div class="featured-listings" *ngIf="randomListings.length > 0">
+    <div *ngFor="let listing of randomListings" class="listing">
+      <img [src]="listing.image" alt="{{ listing.name }}" height="350" />
+      <h3>{{ listing.name }}</h3>
+      <p>Price: ${{ listing.price.toFixed(2) }}</p>
+    </div>
+  </div>
+  
