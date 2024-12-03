@@ -1,10 +1,9 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const cartController = require("../controllers/cart");
+const cartController = require('../controllers/cartController');
+// const checkJwt = require('../middleware/authMiddleware');
 
-router.get("/:userId", cartController.getCartByUser);
-router.post("/:id", cartcontroller.addToCart);
-router.delete("/:id", cartController.removeFromCart);
-router.put("/:id", cartController.updateItemQuantity);
+router.get('/', cartController.getCartByUserId); // Get cart by userId
+router.post('/', cartController.addToCart); // Add product to cart
 
 module.exports = router;
