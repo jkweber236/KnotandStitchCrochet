@@ -8,9 +8,11 @@
 
   /* Colors */
   --logo-color: #102d4a;
-  --main-color: #77a4b9;
+  --main-color: #83b6ce;
   --accent-color: #85baa1;
   --background-color: #d3dbe2;
+  --hero-main-color: #e88281;
+  --hero-second-color: #b94a48;
 
   /* Screen Widths */
   --small-screen: 320px;
