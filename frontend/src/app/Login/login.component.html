@@ -1,0 +1,27 @@
+<div class="profile-body">
+  <h1>Login</h1>
+  @if (errorMessage) {
+    <div>{{ errorMessage }}</div>
+  }
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login">
+    <div class="email">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" />
+    </div>
+    <div class="password">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" />
+    </div>
+    <button type="submit" class="loginButton">Login</button>
+  </form>
+
+  <div class="createAccount">
+    <p>Don't have an account?</p>
+    <a
+      class="createAccountLink"
+      routerLink="/create-account"
+      routerLinkActive="active"
+      >Create account</a
+    >
+  </div>
+</div>
