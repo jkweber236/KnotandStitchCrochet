@@ -1,3 +1,4 @@
+import { environment } from '../environments/environment';
 import {
   ApplicationConfig,
   importProvidersFrom,
@@ -13,13 +14,13 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDE2ZQ-1NCl-JmFgTB_iiuJUPsOm4ao7zw',
-  authDomain: 'knot-and-stitch-crochet.firebaseapp.com',
-  projectId: 'knot-and-stitch-crochet',
-  storageBucket: 'knot-and-stitch-crochet.firebasestorage.app',
-  messagingSenderId: '146079792953',
-  appId: '1:146079792953:web:1251c3c67c6c2439c9b2e8',
-  measurementId: 'G-XKVB7S4EY7',
+  apiKey: environment.FIREBASE_API_KEY,
+  authDomain: environment.FIREBASE_AUTH_DOMAIN,
+  projectId: environment.FIREBASE_PROJECT_ID,
+  storageBucket: environment.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: environment.FIREBASE_MESSAGING_SENDER_ID,
+  appId: environment.FIREBASE_APP_ID,
+  measurementId: environment.FIREBASE_MEASUREMENT_ID,
 };
 
 export const appConfig: ApplicationConfig = {
