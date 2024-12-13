@@ -1,23 +1,32 @@
 <div class="profile-body">
   <!-- If the user is signed in -->
-  <div *ngIf="false; else notLoggedIn">
-    <p>You are logged in</p>
+  <div *ngIf="authService.currentUserSig(); else notLoggedIn">
+    <p>
+      Hi {{ authService.currentUserSig()?.username }}! Thank you for visiting
+      our website!
+    </p>
+    <span (click)="logout()">Logout</span>
   </div>
 
   <!-- If the user is NOT signed in -->
   <ng-template #notLoggedIn>
     <h1>Login</h1>
-    <form class="login">
+    @if (errorMessage) {
+      <div>{{ errorMessage }}</div>
+    }
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login">
       <div class="email">
         <label for="email">Email</label>
-        <input type="email" name="email" />
+        <input type="text" formControlName="email" />
       </div>
       <div class="password">
         <label for="password">Password</label>
-        <input type="password" name="password" />
+        <input type="password" formControlName="password" />
       </div>
       <button type="submit" class="loginButton">Login</button>
     </form>
+
+    <span (click)="logout()">Logout</span>
 
     <div class="createAccount">
       <p>Don't have an account?</p>
