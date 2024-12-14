@@ -27,17 +27,17 @@ export class CheckoutComponent implements OnInit {
       key: environment.STRIPE_KEY, 
       locale: 'auto',
       token:function(stripeToken:any) {
-        console.log(stripeToken);
         this.success = true;
         this.failure = false;
 
-        paymentStripe(stripeToken)
-      }
+        this.paymentStripe(stripeToken)
+      },
+      billingAddress: true,
+      shippingAddress:true,
     });
 
     const paymentStripe = (stripeToken: any) => {
       this.checkout.makePayment(stripeToken).subscribe((data:any) => {
-        console.log(data)
 
         if (data.data === "success") {
           this.success = true
@@ -66,8 +66,9 @@ export class CheckoutComponent implements OnInit {
             key: environment.STRIPE_KEY,
             locale: 'auto',
             token: function (stripeToken: any) {
-              console.log(stripeToken);
             },
+            billingAddress: true,
+            shippingAddress: true,
           });
         };
         window.document.body.appendChild(script);
