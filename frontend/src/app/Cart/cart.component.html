@@ -1,15 +1,16 @@
-<div *ngIf="cartItems.length > 0; else emptyCart">
+<div class="cart-page" *ngIf="cartItems.length > 0; else emptyCart">
   <h3>Your cart has {{ cartItems.length }} item(s).</h3>
+  <p id="order-total">Total: ${{ getTotalCost() | number: "1.2-2" }}</p>
   <div class="singleProduct" *ngFor="let item of cartItems">
     <img src="{{ item.image }}" />
-    <p>{{ item.name }} - Quantity: {{ item.quantity }}</p>
-    <p>Price: ${{ (item.quantity * item.price).toFixed(2) }}</p>
-    <button (click)="removeFromCart(item._id)">Remove from cart</button>
+    <div class="item-details">
+      <p id="name">{{ item.name }}</p>
+      <p id="quantity"> Quantity: {{ item.quantity }}</p>
+      <p id="price">Price: ${{ (item.quantity * item.price).toFixed(2) }}</p>
+    </div>
+    <button class="removeButton" (click)="removeFromCart(item._id)">Remove</button>
   </div>
-  <p>Total: ${{ getTotalCost() | number: "1.2-2" }}</p>
-
-  <h2>Checkout</h2>
-  <button (click)="makePayment(getTotalCost())">Pay with stripe</button>
+  <button id="checkout-button" (click)="makePayment(getTotalCost())">Checkout</button>
 </div>
 
 <ng-template #emptyCart>
