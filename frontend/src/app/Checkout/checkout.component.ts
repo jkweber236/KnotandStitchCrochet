@@ -26,31 +26,31 @@ export class CheckoutComponent implements OnInit {
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: environment.STRIPE_KEY, 
       locale: 'auto',
-      token:function(stripeToken:any) {
+      token: (stripeToken: any) => {
         this.success = true;
         this.failure = false;
-
         this.paymentStripe(stripeToken)
       },
       billingAddress: true,
       shippingAddress:true,
     });
 
-    const paymentStripe = (stripeToken: any) => {
-      this.checkout.makePayment(stripeToken).subscribe((data:any) => {
-
-        if (data.data === "success") {
-          this.success = true
-        } else {
-          this.failure = true
-        }
-      })
-    }
 
     paymentHandler.open({
       name: "Crochet Product",
       description: "A physical crochet product",
       amount: amount * 100
+    })
+  }
+
+  paymentStripe = (stripeToken: any) => {
+    this.checkout.makePayment(stripeToken).subscribe((data:any) => {
+
+      if (data.data === "success") {
+        this.success = true
+      } else {
+        this.failure = true
+      }
     })
   }
 
@@ -65,7 +65,7 @@ export class CheckoutComponent implements OnInit {
           this.paymentHandler = (<any>window).StripeCheckout.configure({
             key: environment.STRIPE_KEY,
             locale: 'auto',
-            token: function (stripeToken: any) {
+            token: (stripeToken: any) => {
             },
             billingAddress: true,
             shippingAddress: true,
