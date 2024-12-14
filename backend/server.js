@@ -18,6 +18,8 @@ app.use(express.json());
 
 app.use("/", require("./routes"));
 
+app.use(express.static('frontend/public'));
+
 mongodb.initDb((err) => {
   if (err) {
     console.log(err);

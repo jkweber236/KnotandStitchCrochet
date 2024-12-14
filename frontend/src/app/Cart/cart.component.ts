@@ -21,10 +21,10 @@ export class CartComponent implements OnInit {
   success: boolean = false;
   failure: boolean = false;
 
-  constructor(
-    private authService: AuthService,
-    private checkout: CheckoutService,
-  ) {}
+  isCheckoutComplete = false;
+  purchasedPatterns: string[] = [];
+
+  constructor(private authService: AuthService, private checkout: CheckoutService) {}
 
   ngOnInit() {
     this.invokeStripe();
@@ -97,7 +97,8 @@ export class CartComponent implements OnInit {
       token: (stripeToken: any) => {
         this.success = true;
         this.failure = false;
-        this.paymentStripe(stripeToken);
+        this.paymentStripe(stripeToken)
+        this.completeCheckout();
       },
       billingAddress: true,
       shippingAddress: true,
@@ -106,13 +107,8 @@ export class CartComponent implements OnInit {
     paymentHandler.open({
       name: 'KnotandStitchCrochet',
       description: description,
-      amount: totalCost * 100,
-    });
-    // paymentHandler.open({
-    //   name: "Crochet Product",
-    //   description: "A physical crochet product",
-    //   amount: amount * 100
-    // })
+      amount: totalCost * 100
+    })
   }
 
   paymentStripe = (stripeToken: any) => {
@@ -146,5 +142,12 @@ export class CartComponent implements OnInit {
     } else {
       console.warn('Stripe is not available in this environment.');
     }
+  }
+
+  completeCheckout() {
+    this.purchasedPatterns = this.cartItems
+      .filter(item => item.isDigital)
+      .map(item => item.name);
+    this.isCheckoutComplete = true;
   }
 }
