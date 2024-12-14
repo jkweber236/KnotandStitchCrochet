@@ -40,9 +40,20 @@
     <a routerLink="/profile" routerLinkActive="active" class="header-icon">
       <img class="profile" src="user.png" height="40px" width="auto" />
     </a>
-    <a routerLink="/cart" routerLinkActive="active" class="header-icon">
+
+    <a
+      *ngIf="authService.currentUserSig(); else notLoggedIn"
+      routerLink="/cart"
+      routerLinkActive="active"
+      class="header-icon"
+    >
       <img class="cart" src="shopping-cart.png" height="40px" width="auto" />
     </a>
+    <ng-template #notLoggedIn>
+      <a routerLink="/profile" routerLinkActive="active" class="header-icon">
+        <img class="cart" src="shopping-cart.png" height="40px" width="auto" />
+      </a>
+    </ng-template>
     <a (click)="toggleMenu()" class="header-icon">
       <img
         class="hamburger"

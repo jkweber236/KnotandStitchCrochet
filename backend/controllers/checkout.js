@@ -1,14 +1,13 @@
-// controllers/checkoutController.js
 const stripe = require("stripe")(process.env.SECRET_STRIPE_KEY);
 
 const handleCheckout = async (req, res) => {
   console.log(req.body);
-  
+
   try {
     const token = req.body.token;
-    
+
     const customer = await stripe.customers.create({
-      email: token.billing_details.email, 
+      email: token.billing_details.email,
       source: token.id,
       address: {
         line1: token.billing_details.address.line1,
