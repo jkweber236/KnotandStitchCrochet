@@ -3,26 +3,25 @@ const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
 const cors = require("cors");
 
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 const app = express();
 
-app.set("view engine", "ejs");
+app.use(cors({
+  origin: 'http://localhost:4200',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
-app
-  .use(cors())
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    next();
-  })
+app.use(express.json());
 
-  .use("/", require("./routes"));
+app.use("/", require("./routes"));
 
 mongodb.initDb((err) => {
   if (err) {
     console.log(err);
   } else {
-    app.listen(port);
-    console.log(`Connected to DB and listening on port ${port}`);
+    app.listen(port, () => {
+      console.log(`Connected to DB and listening on port ${port}`);
+    });
   }
 });
