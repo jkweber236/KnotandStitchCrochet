@@ -8,6 +8,7 @@ import { ProfileComponent } from './Profile/profile.component';
 import { ProductComponent } from './Product/product.component';
 import { CreateAccountComponent } from './CreateAccount/create-account.component';
 import { LoginComponent } from './Login/login.component';
+import { PasswordResetComponent } from './PasswordReset/passwordreset.component';
 import { CheckoutComponent } from './Checkout/checkout.component';
 
 export const routes: Routes = [
@@ -21,5 +22,6 @@ export const routes: Routes = [
   { path: 'product/:id', component: ProductComponent },
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'passwordreset', component: PasswordResetComponent },
   { path: 'checkout', component: CheckoutComponent },
 ];

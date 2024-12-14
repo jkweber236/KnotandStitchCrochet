@@ -1,9 +1,14 @@
-<div *ngIf="cart">
-    <h2>Your Cart</h2>
-    <ul>
-      <li *ngFor="let item of cart.items">
-        <p>{{ item.productId.name }} - Quantity: {{ item.quantity }}</p>
-      </li>
-    </ul>
+<div *ngIf="cartItems.length > 0; else emptyCart">
+  <h3>Your cart has {{ cartItems.length }} item(s).</h3>
+  <div class="singleProduct" *ngFor="let item of cartItems">
+    <img src="{{ item.image }}" />
+    <p>{{ item.name }} - Quantity: {{ item.quantity }}</p>
+    <p>Price: ${{ (item.quantity * item.price).toFixed(2) }}</p>
+    <button (click)="removeFromCart(item._id)">Remove from cart</button>
   </div>
-  
+  <p>Total: ${{ getTotalCost() | number: "1.2-2" }}</p>
+</div>
+
+<ng-template #emptyCart>
+  <p>Your cart is empty or could not be loaded.</p>
+</ng-template>
