@@ -8,13 +8,15 @@ const app = express();
 
 app.use(cors({
   origin: 'http://localhost:4200',
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
 
 app.use("/", require("./routes"));
+
+app.use(express.static('frontend/public'));
 
 mongodb.initDb((err) => {
   if (err) {

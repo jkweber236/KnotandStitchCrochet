@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: 1.25rem;
 }
+
 .singleProduct {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -56,6 +57,35 @@ img {
   background-color: var(--logo-color);
   color: white;
 }
+
+.pattern-downloads {
+  text-align: center;
+  padding: 2rem;
+  background: var(--logo-color);
+  color: white;
+  margin: 1.5rem auto;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.pattern-downloads a {
+  color: white;
+}
+
+.pattern-downloads p {
+  margin-top: 0;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: 1.25rem;
+  max-width: 80%;
+  margin: auto;
+}
+
 @media (min-width: 600px) {
   img {
     width: 180px;
@@ -120,5 +150,13 @@ img {
     grid-column: 2/3;
     grid-row: 1/2;
     text-align: center;
+  }
+
+  .pattern-downloads a {
+    font-size: 1.25rem;
+  }
+  
+  .pattern-downloads p {
+    font-size: 1.25rem;
   }
 }

@@ -1,4 +1,13 @@
 <div class="cart-page" *ngIf="cartItems.length > 0; else emptyCart">
+  <div class="pattern-downloads" *ngIf="isCheckoutComplete">
+    <p>Thank you for your purchase! You can now download the pattern(s).</p>
+    <div *ngIf="purchasedPatterns.includes('Crochet Headband Pattern')">
+      <a href="/patterns/BabyHeadbandPattern.pdf" download="BabyHeadbandPattern.pdf">Download Baby Headband Pattern</a>
+    </div>
+    <div *ngIf="purchasedPatterns.includes('Crochet Snowball Pattern')">
+      <a href="/patterns/CrochetSnowballPattern.pdf" download="CrochetSnowballPattern.pdf">Download Snowball Pattern</a>
+    </div>
+  </div>
   <h3>Your cart has {{ cartItems.length }} item(s).</h3>
   <p id="order-total">Total: ${{ getTotalCost() | number: "1.2-2" }}</p>
   <div class="singleProduct" *ngFor="let item of cartItems">
@@ -14,5 +23,5 @@
 </div>
 
 <ng-template #emptyCart>
-  <p>Your cart is empty or could not be loaded.</p>
+  <p class="empty-cart">Your cart is empty or could not be loaded.</p>
 </ng-template>
