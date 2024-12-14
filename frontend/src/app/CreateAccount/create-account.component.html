@@ -1,20 +1,17 @@
-<p>create-account works!</p>
+<div class="create-account-container">
+  <h2>Create an Account</h2>
 
-@if (errorMessage) {
-  <div>{{ errorMessage }}</div>
-}
-
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <input type="text" placeholder="Username" formControlName="username" />
-  </div>
-  <div>
     <input type="text" placeholder="Email" formControlName="email" />
-  </div>
-  <div>
     <input type="password" placeholder="Password" formControlName="password" />
-  </div>
-  <div>
     <button type="submit">Sign Up</button>
+  </form>
+  <!-- 
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p> -->
+
+  <div class="existing-account-link">
+    <p>Already have an account? <a routerLink="/profile">Login here</a></p>
   </div>
-</form>
+</div>

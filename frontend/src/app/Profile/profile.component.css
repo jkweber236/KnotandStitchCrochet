@@ -59,11 +59,13 @@ p {
   justify-self: center;
 }
 
-.createAccountLink {
+.createAccountLink,
+.forgotPasswordLink {
   margin: auto;
 }
 
-.createAccountLink:hover {
+.createAccountLink:hover,
+.forgotPasswordLink:hover {
   cursor: pointer;
   font-size: 17px;
 }
@@ -76,10 +78,62 @@ p {
   text-decoration: none;
 }
 
+.forgotPasswordLink {
+  padding-bottom: 5px;
+}
+
+.profile-container button {
+  margin-top: 20px;
+  font-size: 18px;
+  background-color: #fff;
+  border: 1px solid var(--logo-color);
+  color: var(--logo-color);
+  border-radius: 7px;
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+}
+
+.profile-container p {
+  font-size: 19px;
+}
+
+.profile-container h1 {
+  padding-bottom: 20px;
+}
+
+.orderHistory {
+  padding: 20px 0;
+}
+
+.orderHistory h2 {
+  margin-bottom: 10px;
+}
+
+.profile-body {
+  padding: 10px;
+  min-height: 400px;
+}
+
+.logout-container {
+  display: flex;
+  justify-content: center;
+}
+
+.email h2 {
+  margin: 0;
+}
+
 @media (min-width: 600px) {
   .profile-body {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  .profile-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-column: 1/4;
   }
 
   h1 {
@@ -101,11 +155,42 @@ p {
   label {
     font-size: 24px;
   }
+
+  .orderHistory {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    padding: 0;
+    justify-self: center;
+  }
+
+  .profile-container h2 {
+    margin: 0;
+  }
+
+  .logout-container {
+    grid-column: 1/4;
+    padding-top: 20px;
+  }
+
+  .email {
+    padding: 0;
+  }
+
+  .email-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding-left: 5vw;
+  }
 }
 
 @media (min-width: 992px) {
+  .profile-container {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+  }
+
   h1 {
     font-size: 40px;
+    grid-column: 1/5;
   }
 
   input {
@@ -115,5 +200,25 @@ p {
 
   label {
     font-size: 25px;
+  }
+
+  .email-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin: auto;
+  }
+
+  .orderHistory {
+    grid-column: 3/4;
+    margin: auto;
+  }
+
+  .profile-container {
+    justify-content: space-evenly;
+  }
+
+  .logout-container {
+    grid-column: 1/5;
+    margin-top: 20px;
   }
 }

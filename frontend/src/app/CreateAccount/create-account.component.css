@@ -1,0 +1,108 @@
+.create-account-container {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  width: 70%;
+  min-width: 250px;
+  max-width: 300px;
+  min-height: 400px;
+  height: 100%;
+  justify-content: center;
+}
+
+.create-account-container h2 {
+  font-family: var(--header-font);
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 35px;
+}
+
+.create-account-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-account-container input {
+  height: 35px;
+  padding-left: 10px;
+  font-size: 15px;
+  font-family: var(--body-font);
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 0 auto 15px auto;
+  width: 100%;
+  max-width: 450px;
+}
+
+.create-account-container button {
+  height: 40px;
+  width: 90%;
+  border-radius: 7px;
+  border: 1px solid black;
+  font-size: 18px;
+  font-family: var(--body-font);
+  background-color: var(--main-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 250px;
+  margin: auto;
+}
+
+.create-account-container p {
+  text-align: center;
+  margin: 0;
+}
+
+.create-account-container .error {
+  color: red;
+  font-size: 16px;
+  text-align: center;
+}
+
+.create-account-container .success {
+  color: green;
+  font-size: 16px;
+  text-align: center;
+}
+
+.create-account-container .existing-account-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.create-account-container .existing-account-link a {
+  color: var(--logo-color);
+  text-decoration: none;
+}
+
+.create-account-container .existing-account-link a:hover {
+  text-decoration: underline;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+  .create-account-container {
+    width: 50%;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 992px) {
+  .create-account-container h2 {
+    font-size: 32px;
+  }
+
+  .create-account-container input {
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .create-account-container button[type="submit"] {
+    font-size: 20px;
+  }
+}
