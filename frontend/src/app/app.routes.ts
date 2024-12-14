@@ -9,7 +9,6 @@ import { ProductComponent } from './Product/product.component';
 import { CreateAccountComponent } from './CreateAccount/create-account.component';
 import { LoginComponent } from './Login/login.component';
 import { PasswordResetComponent } from './PasswordReset/passwordreset.component';
-import { CheckoutComponent } from './Checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'homepage' }, // Default route
@@ -23,5 +22,4 @@ export const routes: Routes = [
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'passwordreset', component: PasswordResetComponent },
-  { path: 'checkout', component: CheckoutComponent },
 ];
