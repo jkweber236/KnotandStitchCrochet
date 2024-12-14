@@ -1,11 +1,23 @@
 <div class="profile-body">
   <!-- If the user is signed in -->
-  <div *ngIf="authService.currentUserSig(); else notLoggedIn">
-    <p>
-      Hi {{ authService.currentUserSig()?.username }}! Thank you for visiting
-      our website!
-    </p>
-    <span (click)="logout()">Logout</span>
+  <div
+    *ngIf="authService.currentUserSig(); else notLoggedIn"
+    class="profile-container"
+  >
+    <h1>My Account</h1>
+    <div class="email-container">
+      <h2>Email</h2>
+      <p>{{ authService.currentUserSig()?.email }}</p>
+    </div>
+
+    <div class="orderHistory">
+      <h2>Order History</h2>
+      <p>Check your past orders here:</p>
+    </div>
+
+    <div class="logout-container">
+      <button class="logout" (click)="logout()">Logout</button>
+    </div>
   </div>
 
   <!-- If the user is NOT signed in -->
@@ -26,11 +38,13 @@
       <button type="submit" class="loginButton">Login</button>
     </form>
 
-    <a routerLink="/passwordreset" routerLinkActive="active"
-      >Forgot Password?</a
-    >
-
     <div class="createAccount">
+      <a
+        class="forgotPasswordLink"
+        routerLink="/passwordreset"
+        routerLinkActive="active"
+        >Forgot Password?</a
+      >
       <p>Don't have an account?</p>
       <a
         class="createAccountLink"
@@ -39,21 +53,5 @@
         >Create account</a
       >
     </div>
-
-    <!-- <h2>Sign Up</h2>
-    <form class="signup">
-      <div class="username">
-        <label for="username">Username</label>
-        <input type="text" name="username" />
-      </div>
-      <div class="password">
-        <label for="password">Password</label>
-        <input type="text" name="password" />
-      </div>
-      <div class="confirmPassword">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="text" name="confirmPassword" />
-      </div>
-    </form> -->
   </ng-template>
 </div>

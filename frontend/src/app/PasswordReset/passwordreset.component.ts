@@ -4,7 +4,7 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
-} from '@angular/forms'; // Import ReactiveFormsModule and services
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../services/auth.service';
@@ -24,7 +24,7 @@ export class PasswordResetComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService, // Inject the AuthService
+    private authService: AuthService,
   ) {
     this.passwordResetForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -42,16 +42,16 @@ export class PasswordResetComponent {
       next: () => {
         this.successMessage =
           'Password reset email sent successfully! Please check your inbox.';
-        this.errorMessage = ''; // Clear any previous error messages
+        this.errorMessage = '';
       },
       error: (error) => {
         this.errorMessage = `Error: ${error.message}`;
-        this.successMessage = ''; // Clear any previous success message
+        this.successMessage = '';
       },
     });
   }
 
   redirectToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/profile']);
   }
 }
