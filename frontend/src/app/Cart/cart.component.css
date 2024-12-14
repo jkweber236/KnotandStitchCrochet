@@ -1,0 +1,10 @@
+img {
+  width: 100px;
+  height: auto;
+}
+
+.singleProduct {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px;
+}

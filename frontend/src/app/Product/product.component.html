@@ -1,12 +1,19 @@
 <div class="product-details" *ngIf="product">
-  <img *ngIf="product.image" [src]="product.image" alt="{{ product.name }}" width="350"/>
+  <img
+    *ngIf="product.image"
+    [src]="product.image"
+    alt="{{ product.name }}"
+    width="350"
+  />
   <div class="product-text">
     <h2>{{ product.name }}</h2>
     <p>Price: ${{ product.price.toFixed(2) }}</p>
-    <button>Add to cart</button>
+    <button (click)="addToCart()">Add to cart</button>
     <p>Item Details:</p>
     <div class="description">
       <p *ngFor="let line of product.description">{{ line }}</p>
     </div>
-</div>
+    <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </div>
 </div>
