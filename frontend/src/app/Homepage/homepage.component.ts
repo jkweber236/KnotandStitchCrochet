@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomepageComponent implements OnInit {
   randomListings: any[] = [];
-  private apiUrl = 'http://localhost:5000/products/random'; // Replace with your API base URL
+  private apiUrl = 'http://localhost:5000/products/random';
 
   constructor(private http: HttpClient) {}
 
@@ -27,7 +27,7 @@ export class HomepageComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching random listings:', error);
-      }
+      },
     );
   }
 }
