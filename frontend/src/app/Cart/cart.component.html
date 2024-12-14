@@ -5,12 +5,16 @@
     <img src="{{ item.image }}" />
     <div class="item-details">
       <p id="name">{{ item.name }}</p>
-      <p id="quantity"> Quantity: {{ item.quantity }}</p>
+      <p id="quantity">Quantity: {{ item.quantity }}</p>
       <p id="price">Price: ${{ (item.quantity * item.price).toFixed(2) }}</p>
     </div>
-    <button class="removeButton" (click)="removeFromCart(item._id)">Remove</button>
+    <button class="removeButton" (click)="removeFromCart(item._id)">
+      Remove
+    </button>
   </div>
-  <button id="checkout-button" (click)="makePayment(getTotalCost())">Checkout</button>
+  <button id="checkout-button" (click)="makePayment(getTotalCost())">
+    Checkout
+  </button>
 </div>
 
 <ng-template #emptyCart>
