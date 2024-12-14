@@ -81,6 +81,10 @@ export class CartComponent implements OnInit {
   }
 
   makePayment(amount: number) {
+    const totalCost = this.getTotalCost();
+    const totalItems = this.cartItems.reduce((total, item) => total + item.quantity, 0);
+    const description = `You are purchasing ${totalItems} item(s).`;
+
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: environment.STRIPE_KEY, 
       locale: 'auto',
@@ -94,10 +98,15 @@ export class CartComponent implements OnInit {
     });
 
     paymentHandler.open({
-      name: "Crochet Product",
-      description: "A physical crochet product",
-      amount: amount * 100
+      name: "KnotandStitchCrochet",
+      description: description,
+      amount: totalCost * 100
     })
+    // paymentHandler.open({
+    //   name: "Crochet Product",
+    //   description: "A physical crochet product",
+    //   amount: amount * 100
+    // })
   }
 
   paymentStripe = (stripeToken: any) => {
