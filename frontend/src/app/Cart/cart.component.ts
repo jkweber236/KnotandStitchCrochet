@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   cartId: string | null = null;
   cartItems: any[] = [];
 
-  paymentHandler:any = null;
+  paymentHandler: any = null;
   success: boolean = false;
   failure: boolean = false;
 
@@ -27,7 +27,7 @@ export class CartComponent implements OnInit {
   constructor(private authService: AuthService, private checkout: CheckoutService) {}
 
   ngOnInit() {
-    this.invokeStripe()
+    this.invokeStripe();
 
     this.authService.user$.subscribe((user: User | null) => {
       if (user) {
@@ -85,11 +85,14 @@ export class CartComponent implements OnInit {
 
   makePayment(amount: number) {
     const totalCost = this.getTotalCost();
-    const totalItems = this.cartItems.reduce((total, item) => total + item.quantity, 0);
+    const totalItems = this.cartItems.reduce(
+      (total, item) => total + item.quantity,
+      0,
+    );
     const description = `You are purchasing ${totalItems} item(s).`;
 
     const paymentHandler = (<any>window).StripeCheckout.configure({
-      key: environment.STRIPE_KEY, 
+      key: environment.STRIPE_KEY,
       locale: 'auto',
       token: (stripeToken: any) => {
         this.success = true;
@@ -98,26 +101,25 @@ export class CartComponent implements OnInit {
         this.completeCheckout();
       },
       billingAddress: true,
-      shippingAddress:true,
+      shippingAddress: true,
     });
 
     paymentHandler.open({
-      name: "KnotandStitchCrochet",
+      name: 'KnotandStitchCrochet',
       description: description,
       amount: totalCost * 100
     })
   }
 
   paymentStripe = (stripeToken: any) => {
-    this.checkout.makePayment(stripeToken).subscribe((data:any) => {
-
-      if (data.data === "success") {
-        this.success = true
+    this.checkout.makePayment(stripeToken).subscribe((data: any) => {
+      if (data.data === 'success') {
+        this.success = true;
       } else {
-        this.failure = true
+        this.failure = true;
       }
-    })
-  }
+    });
+  };
 
   invokeStripe() {
     if (typeof window !== 'undefined') {
@@ -130,8 +132,7 @@ export class CartComponent implements OnInit {
           this.paymentHandler = (<any>window).StripeCheckout.configure({
             key: environment.STRIPE_KEY,
             locale: 'auto',
-            token: (stripeToken: any) => {
-            },
+            token: (stripeToken: any) => {},
             billingAddress: true,
             shippingAddress: true,
           });
@@ -149,5 +150,4 @@ export class CartComponent implements OnInit {
       .map(item => item.name);
     this.isCheckoutComplete = true;
   }
-
 }

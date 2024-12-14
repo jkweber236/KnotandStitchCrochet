@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 export class AppComponent {
   title = 'knotandstitchcrochet';
   menuOpen = false;
+  authService = inject(AuthService);
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;

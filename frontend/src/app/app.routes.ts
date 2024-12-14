@@ -22,4 +22,5 @@ export const routes: Routes = [
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'passwordreset', component: PasswordResetComponent },
+  { path: 'checkout', component: CartComponent },
 ];
