@@ -7,6 +7,9 @@
     <button (click)="removeFromCart(item._id)">Remove from cart</button>
   </div>
   <p>Total: ${{ getTotalCost() | number: "1.2-2" }}</p>
+
+  <h2>Checkout</h2>
+  <button (click)="makePayment(getTotalCost())">Pay with stripe</button>
 </div>
 
 <ng-template #emptyCart>

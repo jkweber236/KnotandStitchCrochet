@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { User } from '@angular/fire/auth';
 import { CommonModule } from '@angular/common';
+import { CheckoutService } from '../services/checkout.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -15,9 +17,15 @@ export class CartComponent implements OnInit {
   cartId: string | null = null;
   cartItems: any[] = [];
 
-  constructor(private authService: AuthService) {}
+  paymentHandler:any = null;
+  success: boolean = false;
+  failure: boolean = false;
+
+  constructor(private authService: AuthService, private checkout: CheckoutService) {}
 
   ngOnInit() {
+    this.invokeStripe()
+
     this.authService.user$.subscribe((user: User | null) => {
       if (user) {
         this.authService
@@ -71,4 +79,69 @@ export class CartComponent implements OnInit {
       return total + item.price * item.quantity;
     }, 0);
   }
+
+  makePayment(amount: number) {
+    const totalCost = this.getTotalCost();
+    const totalItems = this.cartItems.reduce((total, item) => total + item.quantity, 0);
+    const description = `You are purchasing ${totalItems} item(s).`;
+
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key: environment.STRIPE_KEY, 
+      locale: 'auto',
+      token: (stripeToken: any) => {
+        this.success = true;
+        this.failure = false;
+        this.paymentStripe(stripeToken)
+      },
+      billingAddress: true,
+      shippingAddress:true,
+    });
+
+    paymentHandler.open({
+      name: "KnotandStitchCrochet",
+      description: description,
+      amount: totalCost * 100
+    })
+    // paymentHandler.open({
+    //   name: "Crochet Product",
+    //   description: "A physical crochet product",
+    //   amount: amount * 100
+    // })
+  }
+
+  paymentStripe = (stripeToken: any) => {
+    this.checkout.makePayment(stripeToken).subscribe((data:any) => {
+
+      if (data.data === "success") {
+        this.success = true
+      } else {
+        this.failure = true
+      }
+    })
+  }
+
+  invokeStripe() {
+    if (typeof window !== 'undefined') {
+      if (!window.document.getElementById('stripe-script')) {
+        const script = window.document.createElement('script');
+        script.id = 'stripe-script';
+        script.type = 'text/javascript';
+        script.src = 'https://checkout.stripe.com/checkout.js';
+        script.onload = () => {
+          this.paymentHandler = (<any>window).StripeCheckout.configure({
+            key: environment.STRIPE_KEY,
+            locale: 'auto',
+            token: (stripeToken: any) => {
+            },
+            billingAddress: true,
+            shippingAddress: true,
+          });
+        };
+        window.document.body.appendChild(script);
+      }
+    } else {
+      console.warn('Stripe is not available in this environment.');
+    }
+  }
+
 }
